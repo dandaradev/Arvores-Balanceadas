@@ -59,8 +59,6 @@ public class ListaSE {
         }
     }
 
-
-
     /**
      * Insere uma célula no final da lista.
      *

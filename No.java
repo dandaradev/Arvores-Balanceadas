@@ -7,7 +7,6 @@ public class No {
     No esquerda;
     ListaSE linhas;
     int linha;
-    int altura;
 
     /**
      * Construtor para inicializar um nó com uma palavra e a linha onde ela ocorre.

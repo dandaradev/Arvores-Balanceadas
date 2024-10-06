@@ -42,6 +42,12 @@ public class ArvoreBinariaAVL {
         return 1 + Math.max(altura(atual.esquerda), altura(atual.direita));
     }
 
+    /**
+     * Calcula o fator de balanceamento de um nó da árvore binária.
+     *
+     * @param no O nó a ser calculado.
+     * @return O fator de balanceamento.
+     */
     private int fatorBalanceamento(No no) {
         if (no == null) {
             return 0;
@@ -50,15 +56,26 @@ public class ArvoreBinariaAVL {
         }
     }
 
+    /**
+     * Realiza a rotação LL de uma subárvore.
+     *
+     * @param raiz A raíz da subárvore a ser rotacionada.
+     * @return A nova subárvore, já rotacionada.
+     */
     private No rotacaoSimplesDireita(No raiz) {
         No aux = raiz.esquerda.direita;
         raiz.esquerda.direita = raiz;
-        /*elimina referências*/
         raiz = raiz.esquerda;
         raiz.direita.esquerda = aux;
         return raiz;
     }
 
+    /**
+     * Realiza a rotação RR de uma subárvore.
+     *
+     * @param raiz A raíz da subárvore a ser rotacionada.
+     * @return A nova subárvore, já rotacionada.
+     */
     private No rotacaoSimplesEsquerda(No raiz) {
         No aux = raiz.direita.esquerda;
         raiz.direita.esquerda = raiz;
@@ -67,6 +84,12 @@ public class ArvoreBinariaAVL {
         return raiz;
     }
 
+    /**
+     * Realiza a rotação LR de uma subárvore.
+     *
+     * @param raiz A raíz da subárvore a ser rotacionada.
+     * @return A nova subárvore, já rotacionada.
+     */
     private No rotacaoEsquerdaDireita(No raiz){
         No aux = raiz.esquerda.direita.esquerda;
         raiz.esquerda.direita.esquerda = raiz.esquerda;
@@ -75,6 +98,12 @@ public class ArvoreBinariaAVL {
         return rotacaoSimplesDireita(raiz);
     }
 
+    /**
+     * Realiza a rotação RL de uma subárvore.
+     *
+     * @param raiz A raíz da subárvore a ser rotacionada.
+     * @return A nova subárvore, já rotacionada.
+     */
     private No rotacaoDireitaEsquerda(No raiz) {
         No aux = raiz.direita.esquerda.direita;
         raiz.direita.esquerda.direita = raiz.direita;
@@ -83,6 +112,12 @@ public class ArvoreBinariaAVL {
         return rotacaoSimplesEsquerda(raiz);
     }
 
+    /**
+     * Determina se um nó está balanceado ou não e aplica as rotações necessárias.
+     *
+     * @param no O nó da subárvore a ser analisado.
+     * @return O novo nó, balanceado caso necessário.
+     */
     private No balancear(No no) {
         int balanceamento = fatorBalanceamento(no);
         if (balanceamento > 1) {
