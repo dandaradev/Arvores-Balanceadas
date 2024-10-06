@@ -22,6 +22,27 @@ public class ListaSE {
         return (primeiro == null);
     }
 
+
+
+    /**
+     * Pesquisa se uma célula com o valor especificado existe na lista.
+     *
+     * @param v O valor a ser pesquisado na lista.
+     * @return True se o valor for encontrado, False se não for.
+     */
+    public boolean pesquisar(int v) {
+        if (estaVazia()) {
+            return false;
+        } else {
+            Celula aux = primeiro;
+            while (aux != null && aux.linha != v) {
+                aux = aux.proximo;
+            }
+            return aux != null;
+        }
+    }
+
+
     /**
      * Imprime todas as linhas armazenadas na lista.
      */
@@ -38,12 +59,20 @@ public class ListaSE {
         }
     }
 
+
+
     /**
      * Insere uma célula no final da lista.
      *
      * @param celula A célula a ser inserida.
      */
+
     public void inserirNoFim(Celula celula) {
+        // Verifica se a linha já está presente
+        if (pesquisar(celula.linha)) {
+            return; // Não insere duplicata
+        }
+
         if (estaVazia()) {
             primeiro = celula;
         } else {
@@ -56,5 +85,6 @@ public class ListaSE {
         comprimento++;
     }
 
-    // escrever metodo de pesquisar na lista
+
+
 }
