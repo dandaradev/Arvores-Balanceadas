@@ -52,7 +52,7 @@ Repositório para Trabalho Pratico da disciplina "Programação III", ofertada n
 
 **No, Principal** - Kaique e Luan
 
-**Classe LeitorArquivo**  - Vinicius, Dandara
+**Classe LeitorArquivo**  - Vinicius
 
 **Classe ListaSE** - Karen e Vinicius
 
