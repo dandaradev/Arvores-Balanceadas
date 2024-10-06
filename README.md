@@ -48,7 +48,7 @@ Repositório para Trabalho Pratico da disciplina "Programação III", ofertada n
 
 **Líder:** - Dandara 
 
-**Classes ArvoreBinariaAVL** - Paulo
+**Classe ArvoreBinariaAVL** - Paulo
 
 **No, Principal** - Kaique e Luan
 
